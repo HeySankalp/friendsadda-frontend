@@ -1,0 +1,69 @@
+.profile{
+    display: flex;
+}
+.profileRight{
+    flex: 9;
+}
+.profileCover{
+    height: 320px;
+    position: relative;
+}
+.profileCoverImg{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.profileUserImg{
+    width: 150px;
+    height: 150px;
+    border: 3px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    top: 150px;
+}
+.profileUserEdit{
+    position: absolute;
+    right: 43%;
+    bottom: 30px;
+    color :#1872f2;
+    cursor: pointer;
+}
+.profileUserSubmit{
+    position: absolute;
+    right: 37.5%;
+    bottom: 30px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: #1872f2;
+    padding : 5px 8px 5px 8px;
+    border-radius: 20px;   
+}
+.profileUserLoader{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    top: 200px;
+    font-size: large;
+
+}
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profileInfoName{
+    font-size: 24px;
+}
+.profileInfoDesc{
+    font-weight: 300;
+}
+.profileRightBottom{
+    display: flex;
+}
