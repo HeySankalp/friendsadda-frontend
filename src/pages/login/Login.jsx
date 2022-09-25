@@ -38,7 +38,6 @@ localStorage.setItem("loggedin",false)
     if (res.data.success) {
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user })
       localStorage.setItem('user', JSON.stringify(res.data.user));
-      console.log(res.data.user)
       alert.show('Successfully Logged-in!',{type: 'success'});
       localStorage.setItem("loggedin",true)
       navigate('/home');

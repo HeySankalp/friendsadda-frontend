@@ -36,7 +36,7 @@ const Topbar = () => {
     }
   }
 
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const loggedinUser = JSON.parse(localStorage.getItem('user'));
 
   return (
@@ -74,9 +74,9 @@ const Topbar = () => {
         <div className='topbarprofile'>
           <span className="topbarLinkLogout" onClick={handleLogout}>Logout</span>
           <Link to={`/profile/${loggedinUser.username}`}>
-            <img crossOrigin="anonymous" src={loggedinUser.profilePicture
-              ? PF + "person/" + loggedinUser.profilePicture
-              : PF + "default/noavatar.jpg"} alt="profile" className="topbarImg" />
+            <img  src={loggedinUser.profilePicture
+              ? loggedinUser.profilePicture
+              : "/assets/noavatar.jpg"} alt="profile" className="topbarImg" />
           </Link>
         </div>
       </div>
