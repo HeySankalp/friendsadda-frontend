@@ -10,7 +10,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 const Profilerightbar = ({ user }) => {
 
     const currentuser = JSON.parse(localStorage.getItem('user'));
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const server =process.env.REACT_APP_SERVER;
     const [friends, setFriends] = useState([]);
     const [followed, setFollowed] = useState(false);
@@ -94,10 +93,10 @@ const Profilerightbar = ({ user }) => {
                     return (
                         <Link key={friend._id} to={`/profile/${friend.username}`} style={{ textDecoration: "none", color: "black" }}>
                             <div className="profileRightbarFollowing">
-                                <img crossOrigin="anonymous"
+                                <img
                                     src={friend.profilePicture
-                                        ? PF + "person/" + friend.profilePicture
-                                        : PF + "default/noavatar.jpg"} alt="" className="profileRightbarFollowingImg" />
+                                        ? friend.profilePicture
+                                        : "/assets/noavatar.jpg"} alt="" className="profileRightbarFollowingImg" />
                                 <span className="profileRightbarFollowingName">{friend.username}</span>
                             </div>
                         </Link>

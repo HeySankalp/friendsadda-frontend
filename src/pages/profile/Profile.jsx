@@ -56,12 +56,22 @@ const Profile = () => {
             profilePicture: url
           }
           axios.put(`${server}/api/user/${loggedinUser._id}`, data);
-          const profilePicRef = firebase.storage().refFromURL(user.profilePicture)
-          profilePicRef.delete()
+          try {
+            const profilePicRef = firebase.storage().refFromURL(user.profilePicture)
+            profilePicRef.delete()
+          } catch (error) {
+          }
+          if (user.profilePicture) {
+            localStorage.setItem('user', localStorage.getItem('user').replace(user.profilePicture, url))
+          } else {
+            let temp = JSON.parse(localStorage.getItem('user'))
+            temp.profilePicture=url;
+            localStorage.setItem('user',JSON.stringify(temp));
+          }
+
           window.location.reload();
         }
       })
-
   }
 
 
